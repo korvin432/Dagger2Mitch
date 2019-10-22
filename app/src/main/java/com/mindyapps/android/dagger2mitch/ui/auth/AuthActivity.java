@@ -21,6 +21,7 @@ public class AuthActivity extends DaggerAppCompatActivity {
     private static final String TAG = "AuthActivity";
 
     private AuthViewModel viewModel;
+
     @Inject
     ViewModelProviderFactory providerFactory;
 

@@ -1,5 +1,6 @@
 package com.mindyapps.android.dagger2mitch;
 
+
 import com.mindyapps.android.dagger2mitch.di.DaggerAppComponent;
 
 import dagger.android.AndroidInjector;

@@ -1,5 +1,7 @@
 package com.mindyapps.android.dagger2mitch.di.auth;
 
+import androidx.lifecycle.ViewModel;
+
 import com.mindyapps.android.dagger2mitch.di.ViewModelKey;
 import com.mindyapps.android.dagger2mitch.ui.auth.AuthViewModel;
 
@@ -13,5 +15,5 @@ public abstract class AuthViewModelsModule {
     @Binds
     @IntoMap
     @ViewModelKey(AuthViewModel.class)
-    public abstract ViewModelKey bindAuthViewModel(AuthViewModel viewModel);
+    public abstract ViewModel bindAuthViewModel(AuthViewModel viewModel);
 }
