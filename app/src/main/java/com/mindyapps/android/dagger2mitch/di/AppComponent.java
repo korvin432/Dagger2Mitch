@@ -3,6 +3,7 @@ package com.mindyapps.android.dagger2mitch.di;
 import android.app.Application;
 
 import com.mindyapps.android.dagger2mitch.BaseApplication;
+import com.mindyapps.android.dagger2mitch.SessionManager;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -22,6 +23,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
         }
 )
 public interface AppComponent extends AndroidInjector<BaseApplication> {
+
+    SessionManager sessionManager();
 
     @Component.Builder
     interface Builder {
