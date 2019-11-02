@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.mindyapps.android.dagger2mitch.BaseActivity;
 import com.mindyapps.android.dagger2mitch.R;
+import com.mindyapps.android.dagger2mitch.ui.main.profile.ProfileFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -21,6 +22,14 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         Toast.makeText(this, "MainActivity", Toast.LENGTH_SHORT).show();
+
+        testFragment();
+    }
+
+    private void testFragment(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_container, new ProfileFragment())
+                .commit();
     }
 
     @Override
