@@ -3,6 +3,7 @@ package com.mindyapps.android.dagger2mitch.di;
 import com.mindyapps.android.dagger2mitch.di.auth.AuthModule;
 import com.mindyapps.android.dagger2mitch.di.auth.AuthViewModelsModule;
 import com.mindyapps.android.dagger2mitch.di.main.MainFragmentBuildersModule;
+import com.mindyapps.android.dagger2mitch.di.main.MainModule;
 import com.mindyapps.android.dagger2mitch.di.main.MainViewModelsModule;
 import com.mindyapps.android.dagger2mitch.ui.auth.AuthActivity;
 import com.mindyapps.android.dagger2mitch.ui.main.MainActivity;
@@ -19,8 +20,10 @@ public abstract class ActivityBuildersModule {
     abstract AuthActivity contributeAuthActivity();
 
     @ContributesAndroidInjector(
-            modules = {MainFragmentBuildersModule.class, MainViewModelsModule.class}
+            modules = {MainFragmentBuildersModule.class, MainViewModelsModule.class, MainModule.class}
     )
     abstract MainActivity contributeMainActivity();
+
+
 
 }
