@@ -37,6 +37,12 @@ public class PostsFragment extends DaggerFragment {
     PostRecyclerAdapter adapter;
 
     @Inject
+    LinearLayoutManager linearLayoutManager;
+
+    @Inject
+    VerticalSpaceItemDecoration itemDecoration;
+
+    @Inject
     ViewModelProviderFactory providerFactory;
 
     @Nullable
@@ -83,8 +89,7 @@ public class PostsFragment extends DaggerFragment {
 
     private void initRecyclerView(){
         // layout manager could be done as a dependency (VerticalSpaceItemDecoration too)
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        VerticalSpaceItemDecoration itemDecoration = new VerticalSpaceItemDecoration(15);
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.addItemDecoration(itemDecoration);
         recyclerView.setAdapter(adapter);
     }
