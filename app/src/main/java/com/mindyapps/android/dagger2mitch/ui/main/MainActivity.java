@@ -10,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.mindyapps.android.dagger2mitch.BaseActivity;
@@ -31,13 +34,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
-        testFragment();
+        init();
     }
 
-    private void testFragment(){
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_container, new PostsFragment())
-                .commit();
+    private void init(){
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout);
+        NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -65,11 +69,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         switch (menuItem.getItemId()){
             case R.id.nav_profile:{
-
+                Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.profileScreen);
                 break;
             }
             case R.id.nav_posts:{
-
+                Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.postScreen);
                 break;
             }
         }

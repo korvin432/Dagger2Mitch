@@ -66,4 +66,6 @@ dependencies {
     def lifecycle_jetpack_version = "2.0.0"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_jetpack_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_jetpack_version"
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.1.0'
 }
