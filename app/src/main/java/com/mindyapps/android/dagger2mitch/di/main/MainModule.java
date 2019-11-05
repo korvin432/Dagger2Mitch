@@ -14,21 +14,25 @@ import retrofit2.Retrofit;
 @Module
 public class MainModule {
 
+    @MainScope
     @Provides
     static PostRecyclerAdapter provideAdapter(){
         return new PostRecyclerAdapter();
     }
 
+    @MainScope
     @Provides
     static LinearLayoutManager provideLinearLayoutManager(MainActivity mainActivity){
         return new LinearLayoutManager(mainActivity);
     }
 
+    @MainScope
     @Provides
     static VerticalSpaceItemDecoration provideVerticalSpaceItemDecoration(){
         return new VerticalSpaceItemDecoration(15);
     }
 
+    @MainScope
     @Provides
     static MainApi provideMainApi(Retrofit retrofit){
         return retrofit.create(MainApi.class);
